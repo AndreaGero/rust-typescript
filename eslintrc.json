@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:node/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "env": {
+    "node": true
+  },
+  "plugins": ["node", "prettier", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "off",
+    "unicorn/no-array-reduce": "off",
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-var-requires": "off",
+    "node/no-unsupported-features/es-syntax": [
+      "error",
+      { "ignores": ["modules"] }
+    ]
+  },
+  "ignorePatterns": ["node_modules", "build", "dist", "public"],
+  "settings": {
+    "node": {
+      "tryExtensions": [".js", ".json", ".node", ".ts"]
+    }
+  }
+}
