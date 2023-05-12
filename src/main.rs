@@ -1,3 +1,4 @@
+/*
 enum Color {
     Red,
     Green,
@@ -31,8 +32,32 @@ fn print_color(color: Color) {
         Color::Yellow => println!("yellow"),
     }
 }
+*/
+
+/*
+struct Custom {
+    age: usize,
+    name: String,
+}
+
+enum Item {
+    Number(usize),
+    String(String),
+    MyCustom(Custom),
+}
+
+fn appen(items: &mut Vec<Item>) {
+    items.push(Item::String("Hello fem!".into()));
+}
+*/
+
+fn multiply(value: Option<usize>) -> Option<usize> {
+    // return value.unwrap_or(0) * 5;
+    return Some(value? * 5);
+}
 
 fn main() {
+    /*
     // map
     let data = vec![1, 2, 3];
     let mut list = data.iter().map(|x| x + 1);
@@ -60,4 +85,40 @@ fn main() {
     let foo = Color::Green;
     foo.is_green();
     foo.is_green_parts();
+    */
+    /*
+    let mut items: Vec<Item> = vec![];
+    appen(&mut items);
+
+    // we cannot do this
+    // let mut items: Vec<usize> = vec![];
+    // appen(&mut items);
+
+    let foo = Item::Number(5);
+
+    match &foo {
+        Item::Number(num) => println!("I am a number: {}", num),
+        Item::String(str) => println!("I am a string: {}", str),
+        Item::MyCustom(custom) => println!("name: {}, age: {}", custom.name, custom.age),
+    }
+
+    match &foo {
+        Item::MyCustom(custom) => println!("name: {}, age: {}", custom.name, custom.age),
+        _ => {}
+    }
+
+    match &foo {
+        Item::MyCustom(Custom { age, .. }) => println!("age: {}", age),
+        _ => {}
+    }
+
+    match &foo {
+        Item::MyCustom(custom) if custom.name == "Ricky" => println!("Hi, Ricky"),
+        Item::MyCustom(custom) if custom.age > 33 => println!("Jesus age < of this one"),
+        Item::MyCustom(custom) if custom.age < 30 => println!("Hello 30"),
+        _ => {}
+    }
+    */
+
+    println!("{:?}", multiply(Some(6)));
 }

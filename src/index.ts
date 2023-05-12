@@ -1,7 +1,8 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
-import { cwd } from 'process';
+// import { readFileSync } from 'fs';
+// import { join } from 'path';
+// import { cwd } from 'process';
 
+/* 
 enum Color {
   Red,
   Green,
@@ -42,3 +43,35 @@ function printColor(color: Color) {
 }
 
 main();
+*/
+
+/*
+type Custom = {
+  age: number;
+  name: string;
+};
+
+type Item = number | string | Custom;
+
+function append(items: Item[]) {
+  items.push('Hello fem!');
+}
+
+const items: Item[] = [];
+
+console.log(items);
+append(items);
+console.log(items);
+
+const numbers: number[] = [];
+
+console.log(numbers);
+append(numbers);
+console.log(numbers);
+*/
+
+function bar(sig: number | undefined): number | undefined {
+  return sig === undefined ? undefined : sig * 5;
+}
+
+console.log(bar(0));
