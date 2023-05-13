@@ -51,10 +51,18 @@ fn appen(items: &mut Vec<Item>) {
 }
 */
 
+/*
 fn multiply(value: Option<usize>) -> Option<usize> {
     // return value.unwrap_or(0) * 5;
     return Some(value? * 5);
 }
+*/
+
+/*
+fn practice(nums: Vec<usize>, index: usize) -> usize {
+    return nums.get(index).unwrap_or(&index) * 5;
+}
+*/
 
 fn main() {
     /*
@@ -120,5 +128,13 @@ fn main() {
     }
     */
 
-    println!("{:?}", multiply(Some(6)));
+    // println!("{:?}", practice(vec![1, 2], 6));
+
+    let file_name = std::env::args()
+        .nth(1)
+        .expect("The file name to be passed in");
+
+    let file = std::fs::read_to_string(file_name).expect("unable to read the file to string");
+
+    file.lines().for_each(|line| println!("{}", line));
 }

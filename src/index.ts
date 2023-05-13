@@ -2,6 +2,10 @@
 // import { join } from 'path';
 // import { cwd } from 'process';
 
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { cwd } from 'process';
+
 /* 
 enum Color {
   Red,
@@ -70,8 +74,25 @@ append(numbers);
 console.log(numbers);
 */
 
+/*
 function bar(sig: number | undefined): number | undefined {
   return sig === undefined ? undefined : sig * 5;
 }
 
-console.log(bar(0));
+
+function practice(nums: number[], index: number): number {
+  return (nums[index] ?? index) * 5;
+}
+
+*/
+
+const path = process.argv[2];
+
+if (!path) {
+  throw new Error('please provide the path');
+}
+
+readFileSync(join(cwd(), path))
+  .toString()
+  .split('\n')
+  .forEach((l) => console.log(l));
