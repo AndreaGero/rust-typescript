@@ -95,4 +95,11 @@ if (!path) {
 readFileSync(join(cwd(), path))
   .toString()
   .split('\n')
-  .forEach((l) => console.log(l));
+  .forEach((line) => {
+    let print = parseInt(line);
+    if (isNaN(print)) {
+      console.log('line is not a number');
+    } else {
+      console.log(line);
+    }
+  });
